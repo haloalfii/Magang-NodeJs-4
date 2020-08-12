@@ -1,14 +1,14 @@
-const express = require('./node_modules/express');
+const express = require('../node_modules/express');
 const router = express.Router();
-const chalk = require('./node_modules/chalk');
-var moment = require('./node_modules/moment');
+const chalk = require('../node_modules/chalk');
+var moment = require('../node_modules/moment');
 
 router.get('/', function(req, res){
     var greet = 'Welcome to Selametan DatePicker';
     let data = {
         greet,
     }
-    res.json(data);
+    //res.json(data);
 })
 
 router.get('/:date', function(req, res, next){

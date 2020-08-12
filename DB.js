@@ -1,11 +1,17 @@
-var mysql = require('mysql');
+ var mysql = require('mysql');
+const express = require('express');
+const router = express.Router();
 
-var con = mysql.createConnection({
+var connect = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
   database: "db_time_conventer"
 });
+
+module.exports = router;
+
+
 
 // con.connect(function(err) {
 //   if (err) throw err;

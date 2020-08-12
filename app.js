@@ -15,7 +15,9 @@ app.get('/', function(req, res){
 app.use('/selametan', selametan);{
     console.log(chalk.green('Using Selametan'));
 };
-app.use('/time', time);
+app.use('/time', time);{
+    console.log(chalk.green('Using Time Conventer'))
+}
 
 app.listen(8000)
 
