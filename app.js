@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get('/', function(req, res){
     console.log(chalk.green('Akses ke App.Js'))
-    res.send('Masuk ke App.js, silahkan pilih /selametan or /time-conventer')
+    res.send('Masuk ke App.js, silahkan pilih /selametan or /time')
 })
 
 app.use('/selametan', selametan);{

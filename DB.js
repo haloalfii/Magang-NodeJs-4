@@ -1,6 +1,4 @@
- var mysql = require('mysql');
-const express = require('express');
-const router = express.Router();
+var mysql = require('mysql');
 
 var connect = mysql.createConnection({
   host: "localhost",
@@ -9,7 +7,7 @@ var connect = mysql.createConnection({
   database: "db_time_conventer"
 });
 
-module.exports = router;
+module.exports = connect;
 
 
 

@@ -1,11 +1,11 @@
-const express = require('../node_modules/express');
+const express = require('express');
 const router = express.Router();
-const chalk = require('../node_modules/chalk');
-var moment = require('../node_modules/moment-timezone');
+const chalk = require('chalk');
+var moment = require('moment-timezone');
 
 // --------------- MYSQL CONNECT DATABASE ---------------
 
-const mysql = require('../node_modules/mysql');
+const mysql = require('mysql');
 var connect = require('../DB');
 
 // --------------- MYSQL CONNECT DATABASE ---------------
@@ -35,7 +35,6 @@ router.get('/add', function(req, res, con){
         waktu,
         output,
     }
-    res.json(data);
 
     let sql = "INSERT INTO Time (from_tz, from_datetime, to_tz, to_datetime, insert_timestamp) VALUE ? ";
     let value = [[req.query.asal,req.query.waktu,req.query.konfersi,output,moment().format("DD/MM/YYYY HH:mm:ss")]]
@@ -43,6 +42,7 @@ router.get('/add', function(req, res, con){
         if(err) throw err;
         console.log("Insert Conventer Dari "+ req.query.asal + " Success");
     });
+    res.json(data);
 })
 
 router.get('/history', function(req, res, con){
