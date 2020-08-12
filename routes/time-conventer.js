@@ -5,7 +5,6 @@ var moment = require('moment-timezone');
 
 // --------------- MYSQL CONNECT DATABASE ---------------
 
-const mysql = require('mysql');
 var connect = require('../DB');
 
 // --------------- MYSQL CONNECT DATABASE ---------------
