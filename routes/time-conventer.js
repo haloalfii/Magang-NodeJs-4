@@ -51,6 +51,27 @@ router.get('/history', function(req, res, con){
     });
 })
 
+router.get('/history-page/:amount/:page', function(req, res){
+    let amount = req.params.amount;
+    let page = req.params.page;
+    let offset = page*amount;
+
+    if (offset==amount) {
+		connect.query("SELECT * FROM Time LIMIT "+amount, function(err,result,fields){
+		if(err) throw err;
+		res.json(result)
+		});
+    }
+    
+    else if (offset>amount) {
+		offset = offset - amount
+		connect.query("SELECT * FROM Time LIMIT "+amount+" OFFSET "+offset, function(err,result,fields){
+		if(err) throw err;
+		res.json(result)
+		});
+	}
+})
+
 router.get('/clear', function(req, res, con){
     console.log(chalk.red("Data sudah Di Bersihkan"))
     connect.query("DELETE FROM Time", function(err, result, fields){

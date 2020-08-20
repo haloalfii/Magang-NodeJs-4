@@ -2,10 +2,11 @@ const express = require('express')
 const selametan = require('./routes/selametan')
 const chalk = require('chalk')
 const time = require('./routes/time-conventer')
+const bodyParser = require('body-parser')
 
 var app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function(req, res){
     console.log(chalk.green('Akses ke App.Js'))
